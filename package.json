@@ -1,0 +1,30 @@
+{
+    "name": "snowscript-js",
+    "displayName": "SnowScript JS",
+    "description": "Syntax Highlight for Snowflake stored procedures",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.48.0"
+    },
+    "author":"Mauricio Rojas",
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "snowscriptjs",
+            "aliases": ["SnowScriptJS", "snowscriptjs"],
+            "extensions": [".sql"],
+            "configuration": "./language-configuration.json",
+            "embeddedLanguages": {
+                "code.block.snowscriptjs" : "source.js"
+            }
+        }],
+        "grammars": [{
+            "language": "snowscriptjs",
+            "scopeName": "source.snowscript",
+            "path": "./syntaxes/snowscriptjs.tmLanguage.json"
+        }]
+    }
+ 
+}
