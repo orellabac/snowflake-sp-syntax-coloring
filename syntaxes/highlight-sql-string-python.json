@@ -1,0 +1,39 @@
+{
+    "fileTypes": [
+      "py"
+    ],
+    "injectionSelector": "L:source.python -comment",
+    "patterns": [
+        {
+        "begin": "^.*(execute_sql_statement)(\\()(\"\"\")",
+        "end": ".*(\"\"\")",
+        "contentName":"code.block.snowscriptpy.exec",
+        "beginCaptures": {
+            "1": {
+                "name": "entity.name.function"
+            },
+            "2": {
+                "name": "punctuation.definition.parameters.begin.py"
+            },
+            "3": {
+                "name": "string.template.py"
+            }
+        },
+        "endCaptures": {
+            "1": {
+                "name":"string.template.py"
+            }
+        },
+        "patterns": [
+          {
+            "include": "source.sql"
+          },
+          {
+              "name": "variable",
+              "pattern": "?"
+          }
+        ]
+      }
+    ],
+    "scopeName": "snow-sql-py.injection"
+  }

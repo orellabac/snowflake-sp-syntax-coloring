@@ -2,7 +2,7 @@
     "name": "snowscript-js",
     "displayName": "SnowScript JS",
     "description": "Syntax Highlight for Snowflake stored procedures",
-    "version": "0.0.2",
+    "version": "1.0.2",
     "engines": {
         "vscode": "^1.48.0"
     },
@@ -36,6 +36,26 @@
                 "language": "snowscriptjs",
                 "scopeName": "source.snowscript",
                 "path": "./syntaxes/snowscriptjs.tmLanguage.json"
+            },
+            {
+                "path": "./syntaxes/highlight-sql-string-python.json",
+                "scopeName": "snow-sql-py.injection",
+                "injectTo": [
+                    "source.python"
+                ],
+                "embeddedLanguages": {
+                    "meta.embedded.sql": "sql"
+                }
+            },
+            {
+                "path": "./syntaxes/highlight-sql-string.json",
+                "scopeName": "snow-sql.injection",
+                "injectTo": [
+                    "source.snowscript"
+                ],
+                "embeddedLanguages": {
+                    "meta.embedded.sql": "sql"
+                }
             }
         ],
          "breakpoints": [

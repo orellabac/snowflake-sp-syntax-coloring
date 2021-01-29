@@ -1,0 +1,69 @@
+{
+    "fileTypes": [
+      "sql"
+    ],
+    "injectionSelector": "L:code.block.snowscriptjs -comment",
+    "patterns": [
+        {
+        "begin": "^\\s*(EXEC\\w?\\w?)(\\()(`)",
+        "end": ".*(`)",
+        "contentName":"code.block.snowscriptjs.exec",
+        "beginCaptures": {
+            "1": {
+                "name": "entity.name.function"
+            },
+            "2": {
+                "name": "punctuation.definition.parameters.begin.js"
+            },
+            "3": {
+                "name": "string.template.js"
+            }
+        },
+        "endCaptures": {
+            "1": {
+                "name":"string.template.js"
+            }
+        },
+        "patterns": [
+          {
+            "include": "source.sql"
+          },
+          {
+              "name": "variable",
+              "pattern": "?"
+          }
+        ]
+      },
+      {
+        "begin": "^.*(CURSOR)(\\()(`)",
+        "end": ".*(`)",
+        "contentName":"code.block.snowscriptjs.cursor",
+        "beginCaptures": {
+            "1": {
+                "name": "entity.name.function"
+            },
+            "2": {
+                "name": "punctuation.definition.parameters.begin.js"
+            },
+            "3": {
+                "name": "string.template.js"
+            }
+        },
+        "endCaptures": {
+            "1": {
+                "name":"string.template.js"
+            }
+        },
+        "patterns": [
+          {
+            "include": "source.sql"
+          },
+          {
+              "name": "variable",
+              "pattern": "?"
+          }
+        ]
+      }
+    ],
+    "scopeName": "snow-sql.injection"
+  }
