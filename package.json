@@ -2,7 +2,7 @@
     "name": "snowscript-js",
     "displayName": "SnowScript JS",
     "description": "Syntax Highlight for Snowflake stored procedures",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "engines": {
         "vscode": "^1.48.0"
     },
@@ -10,11 +10,12 @@
     "publisher": "orellabacCR",
     "icon":"images/icon.png",
     "author":"Mauricio Rojas",
+    "license": "Mauricio Rojas",
     "keywords": ["snowflake","stored procedures","syntax"],
     "categories": [
         "Programming Languages"
     ],
-    "contributes": {
+    "contributes": {      
         "languages": [
             {
                 "id": "snowscriptjs",

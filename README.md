@@ -24,6 +24,11 @@ or snowconvert_helpers.execute_sql_statement("""
 sql
 """)
 
+### 1.0.3
+
+Fixed issue that required a new line character for hightlight on `EXEC` or `CURSOR` calls.
+Added support to hightlight the `snowflake.execute` and `snowflake.createStatement` calls as well.
+
 
 
 # Examples

@@ -4,9 +4,11 @@
     ],
     "injectionSelector": "L:code.block.snowscriptjs -comment",
     "patterns": [
-        {
-        "begin": "^\\s*(EXEC\\w?\\w?)(\\()(`)",
-        "end": ".*(`)",
+
+      
+      {
+        "begin": "(\\bEXEC\\w?\\w?)(\\()(`)",
+        "end": "`\\)",
         "contentName":"code.block.snowscriptjs.exec",
         "beginCaptures": {
             "1": {
@@ -35,8 +37,46 @@
         ]
       },
       {
-        "begin": "^.*(CURSOR)(\\()(`)",
-        "end": ".*(`)",
+        "begin": "(snowflake\\.execute)(\\()({)\\s*sqlText:(\\\"|`|')",
+        "end": "\\4",
+        "contentName": "code.block.snowscriptjs.execsf",
+        "beginCaptures": {
+          "1" : {
+            "name": "entity.name.function"
+          }
+        },
+        "patterns": [
+          {
+            "include": "source.sql"
+          },
+          {
+              "name": "variable",
+              "pattern": "?"
+          }
+        ]
+      },
+      {
+        "begin": "(snowflake\\.createStatement)(\\()({)\\s*sqlText:(\\\"|`|')",
+        "end": "\\4",
+        "contentName": "code.block.snowscriptjs.createstsf",
+        "beginCaptures": {
+          "1" : {
+            "name": "entity.name.function"
+          }
+        },
+        "patterns": [
+          {
+            "include": "source.sql"
+          },
+          {
+              "name": "variable",
+              "pattern": "?"
+          }
+        ]
+      },
+      {
+        "begin": "(\\bCURSOR)(\\()(`)",
+        "end": "(`)",
         "contentName":"code.block.snowscriptjs.cursor",
         "beginCaptures": {
             "1": {
