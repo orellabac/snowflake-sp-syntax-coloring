@@ -8,7 +8,8 @@
       
       {
         "begin": "(\\bEXEC\\w?\\w?)(\\()(`)",
-        "end": "`\\)",
+        "end": "`[\\)|,]",
+        
         "contentName":"code.block.snowscriptjs.exec",
         "beginCaptures": {
             "1": {

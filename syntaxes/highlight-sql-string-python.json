@@ -5,8 +5,8 @@
     "injectionSelector": "L:source.python -comment",
     "patterns": [
         {
-        "begin": "^.*(execute_sql_statement)(\\()(\"\"\")",
-        "end": ".*(\"\"\")",
+        "begin": "^.*(execute_sql_statement|exec)(\\()(\"\"\")",
+        "end": "(\"\"\")",
         "contentName":"code.block.snowscriptpy.exec",
         "beginCaptures": {
             "1": {

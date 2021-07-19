@@ -29,6 +29,10 @@ sql
 Fixed issue that required a new line character for hightlight on `EXEC` or `CURSOR` calls.
 Added support to hightlight the `snowflake.execute` and `snowflake.createStatement` calls as well.
 
+### 1.0.4
+
+Fixed issue with `EXEC` helper delimiter in both JS and Python scripts.
+Thanks to Jonathan!!!
 
 
 # Examples
