@@ -34,6 +34,15 @@ Added support to hightlight the `snowflake.execute` and `snowflake.createStateme
 Fixed issue with `EXEC` helper delimiter in both JS and Python scripts.
 Thanks to Jonathan!!!
 
+### 1.0.5
+
+Added support to highlight `SELECT` calls.
+
+### 1.0.6
+
+Added support to highlight `INSERT_TEMP` calls.
+Also integrating commands for quick selection.
+
 
 # Examples
 
@@ -46,4 +55,63 @@ Thanks to Jonathan!!!
 
 ## SQL Highlight in python 
 ![sample2](./sample_python.png)
+
+
+## Keyword shorkcuts extensions
+
+I copied this excellent extensions from https://github.com/dbankier/vscode-quick-select/
+
+They are very handy :) specially to select all the SQL or all the parameters
+## Usage
+
+Here some examples - and it supports multiple selections.
+
+In the examples below use <kbd>CTRL</kbd> instead of <kbd>⌘</kbd> for Windows.
+
+<kbd>⌘</kbd><kbd>k</kbd> <kbd>"</kbd>
+
+![doublequotes](https://github.com/orellabac/snowflake-sp-syntax-coloring/raw/master/images/doublequotes.gif)
+
+<kbd>⌘</kbd><kbd>k</kbd> <kbd>'</kbd>
+
+![singlequotes](https://github.com/orellabac/snowflake-sp-syntax-coloring/raw/master/images/singlequotes.gif)
+
+**NEW:** You can also use this following shortcut to select either single, double quotes or backticks
+
+<kbd>⌘</kbd><kbd>k</kbd> <kbd>;</kbd>
+
+**NEW:** You can also use this following shortcut to toggle quotes, e.g. `"word"` to `'word'`
+
+<kbd>⌘</kbd><kbd>k</kbd> <kbd>:</kbd>
+
+**NOTE:** the extensions can be configured to exclude backticks from selection or switching
+
+<kbd>⌘</kbd><kbd>k</kbd> <kbd>`</kbd>
+
+![singlequotes](https://github.com/orellabac/snowflake-sp-syntax-coloring/raw/master/images/backticks.gif)
+
+<kbd>⌘</kbd><kbd>k</kbd> <kbd>(</kbd> and
+<kbd>⌘</kbd><kbd>k</kbd> <kbd>[</kbd> and
+<kbd>⌘</kbd><kbd>k</kbd> <kbd>{</kbd>
+
+Using the following performs and outer selection:
+
+<kbd>⌘</kbd><kbd>k</kbd> <kbd>)</kbd> and
+<kbd>⌘</kbd><kbd>k</kbd> <kbd>]</kbd> and
+<kbd>⌘</kbd><kbd>k</kbd> <kbd>}</kbd>
+
+Or if you have already made in inner selection, use the same key combination again to expand to an outer selection.
+
+![brackets](https://github.com/orellabac/snowflake-sp-syntax-coloring/raw/master/images/brackets.gif)
+
+
+<kbd>⌘</kbd><kbd>k</kbd> <kbd><</kbd>
+
+This also selects the matching tag.
+
+<kbd>⌘</kbd><kbd>k</kbd> <kbd>></kbd>
+
+This matches the tag value.
+
+![brackets](https://github.com/orellabac/snowflake-sp-syntax-coloring/raw/master/images/tags.gif)
 

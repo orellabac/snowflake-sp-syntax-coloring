@@ -7,7 +7,7 @@
 
       
       {
-        "begin": "(\\bEXEC\\w?\\w?)(\\()(`)",
+        "begin": "(\\b(:?EXEC|SELECT)\\w?\\w?)(\\()(`)",
         "end": "`[\\)|,]",
         
         "contentName":"code.block.snowscriptjs.exec",
