@@ -3,11 +3,9 @@
       "sql"
     ],
     "injectionSelector": "L:code.block.snowscriptjs -comment",
-    "patterns": [
-
-      
+    "patterns": [      
       {
-        "begin": "(\\b(:?EXEC|SELECT)\\w?\\w?)(\\()(`)",
+        "begin": "(\\b(:?EXEC|SELECT|INSERT_TEMP)\\w?\\w?)(\\()(`)",
         "end": "`[\\)|,]",
         
         "contentName":"code.block.snowscriptjs.exec",

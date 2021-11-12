@@ -43,6 +43,9 @@ Added support to highlight `SELECT` calls.
 Added support to highlight `INSERT_TEMP` calls.
 Also integrating commands for quick selection.
 
+### 1.0.7
+Republish
+
 
 # Examples
 
