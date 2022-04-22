@@ -1,13 +1,9 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "snowscriptjava",
+	"name": "SnowScriptPython",
 	"patterns": [
 		{
 			"include":"#numbers"
-		},
-		
-		{
-			"include":"#comments"
 		},
 		{
 			"include": "#keywords"
@@ -25,17 +21,17 @@
 			"include": "source.sql"
 		},
 		{
-			"name":"code.block.snowscriptjava",
-			"comment":"Matches a JS code block",
+			"name":"code.block.snowscriptpython",
+			"comment":"Matches a Java code block",
 			"begin" : "(?x) \\$\\$",
 			"end": "(?x) \\$\\$",
 			"patterns": [
-				{ "include" : "source.js"}
+				{ "include" : "source.python"}
 			]
 		},
 		
 		{
-			"name":"variable.parameter.snowscriptjava",
+			"name":"variable.parameter.snowscriptpython",
 
 			"match": "(?i)\\b[-a-z0-9_]+\\b"
 		
@@ -46,28 +42,15 @@
 	   "numbers": {
 		   "patterns":[
 			   {
-				"name":"constant.numeric.snowscriptjava",
+				"name":"constant.numeric.snowscriptpython",
 				"match":"\\b\\d+(\\.\\d+)?\\b"
 			   }
 		   ]
-	   },
-	   "comments": {
-			"patterns": [
-				{
-				"begin":"/\\*",
-				"end":"\\*/",
-				"name":"comment.block.snowscriptjava"
-				},
-				{
-					"match":"--.*$",
-					"name":"comment.line.double-dash.snowscriptjava"
-				}
-			]
-		},
-		"keywords": {
+	   },       
+	   "keywords": {
 			"patterns": [{
 				"name": "keyword.control.snowscript",
-				"match": "\\b(CREATE|REPLACE|PROCEDURE|CALLER|LANGUAGE|JAVASCRIPT|EXECUTE|RETURN|RETURNS)\\b"
+				"match": "\\b(create|CREATE|replace|REPLACE|procedure|PROCEDURE|caller|CALLER|language|LANGUAGE|python|PYTHON|execute|EXECUTE|returns|RETURNS|handler|HANDLER|packages|PACKAGES|runtime_version|RUNTIME_VERSION)\\b"
 			}]
 		},
 		"databasetypes": {
@@ -98,5 +81,5 @@
 			]
 		}
 	},
-	"scopeName": "source.snowscriptjs"
+	"scopeName": "source.snowscriptpython"
 }

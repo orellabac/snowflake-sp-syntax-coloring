@@ -1,0 +1,25 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "SnowScriptJS",
+	"patterns": [
+		{
+			"include":"#numbers"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#keywordsoperator"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#databasetypes"
+		},
+		{
+			"include": "source.sql"
+		}
+	],
+	"scopeName": "source.snowscript"
+}

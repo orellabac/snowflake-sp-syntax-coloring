@@ -1,170 +1,230 @@
 {
-    "name": "snowscript-js",
-    "displayName": "SnowScript JS",
-    "description": "Syntax Highlight for Snowflake stored procedures",
-    "version": "1.0.7",
-    "engines": {
-        "vscode": "^1.48.0"
-    },
-    "repository": "https://github.com/orellabac/snowflake-sp-syntax-coloring",
-    "publisher": "orellabacCR",
-    "icon": "images/icon.png",
-    "author": "Mauricio Rojas",
-    "license": "Mauricio Rojas",
-    "main": "./out/extension.js",
-    "keywords": [
-        "snowflake",
-        "stored procedures",
-        "syntax"
-    ],
-    "categories": [
-        "Programming Languages"
-    ],
-    "activationEvents": [
-        "onCommand:extension.selectSingleQuote",
-        "onCommand:extension.selectDoubleQuote",
-        "onCommand:extension.selectEitherQuote",
-        "onCommand:extension.switchQuotes",
-        "onCommand:extension.selectParenthesis",
-        "onCommand:extension.selectBackTick",
-        "onCommand:extension.selectSquareBrackets",
-        "onCommand:extension.selectCurlyBrackets",
-        "onCommand:extension.selectParenthesisOuter",
-        "onCommand:extension.selectSquareBracketsOuter",
-        "onCommand:extension.selectCurlyBracketsOuter",
-        "onCommand:extension.selectAngleBrackets",
-        "onCommand:extension.selectInTag"
-    ],
-    "contributes": {
-        "configuration": {
-            "type": "object",
-            "title": "Quick Select configuration",
-            "properties": {
-                "quick-select.includeBackticks": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Include backticks when selecting or switching any quotes"
-                }
-            }
-        },
-        "commands": [
-            {
-                "command": "extension.selectSingleQuote",
-                "title": "Quick Select: Select inside single quote"
-            },
-            {
-                "command": "extension.selectDoubleQuote",
-                "title": "Quick Select: Select inside double quote"
-            },
-            {
-                "command": "extension.selectEitherQuote",
-                "title": "Quick Select: Select inside either quote"
-            },
-            {
-                "command": "extension.switchQuotes",
-                "title": "Quick Select: Switch quotes"
-            },
-            {
-                "command": "extension.selectParenthesis",
-                "title": "Quick Select: Select inside parenthesis"
-            },
-            {
-                "command": "extension.selectBackTick",
-                "title": "Quick Select: Select inside back ticks"
-            },
-            {
-                "command": "extension.selectSquareBrackets",
-                "title": "Quick Select: Select inside square brackets"
-            },
-            {
-                "command": "extension.selectCurlyBrackets",
-                "title": "Quick Select: Select inside curly brackets"
-            },
-            {
-                "command": "extension.selectParenthesisOuter",
-                "title": "Quick Select: Select outside parenthesis"
-            },
-            {
-                "command": "extension.selectSquareBracketsOuter",
-                "title": "Quick Select: Select outside square brackets"
-            },
-            {
-                "command": "extension.selectCurlyBracketsOuter",
-                "title": "Quick Select: Select outside curly brackets"
-            },
-            {
-                "command": "extension.selectAngleBrackets",
-                "title": "Quick Select: Select inside angled brackets"
-            },
-            {
-                "command": "extension.selectInTag",
-                "title": "Quick Select: Select inside tag"
-            }
-        ],
-        "menus": {
-            "editor/context": [
-                {
-                    "command": "extension.selectBackTick"
-                }
-            ]
-        },
-        "languages": [
-            {
-                "id": "snowscriptjs",
-                "aliases": [
-                    "SnowScriptJS",
-                    "snowscriptjs"
-                ],
-                "extensions": [
-                    ".sql"
-                ],
-                "configuration": "./language-configuration.json",
-                "embeddedLanguages": {
-                    "code.block.snowscriptjs": "source.js"
-                }
-            }
-        ],
-        "grammars": [
-            {
-                "language": "snowscriptjs",
-                "scopeName": "source.snowscript",
-                "path": "./syntaxes/snowscriptjs.tmLanguage.json"
-            },
-            {
-                "path": "./syntaxes/highlight-sql-string-python.json",
-                "scopeName": "snow-sql-py.injection",
-                "injectTo": [
-                    "source.python"
-                ],
-                "embeddedLanguages": {
-                    "meta.embedded.sql": "sql"
-                }
-            },
-            {
-                "path": "./syntaxes/highlight-sql-string.json",
-                "scopeName": "snow-sql.injection",
-                "injectTo": [
-                    "source.snowscript"
-                ],
-                "embeddedLanguages": {
-                    "meta.embedded.sql": "sql"
-                }
-            }
-        ],
-        "breakpoints": [
-            {
-                "language": "snowscriptjs"
-            }
-        ]
-    },
-    "scripts": {
-        "vscode:prepublish": "tsc -p ./",
-        "compile": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install"
-    },
-    "devDependencies": {
-        "typescript": "^4.1.2",
-        "@types/vscode": "^1.46.0",
-        "@types/node": "^12.11.7"
-    }
+	"name": "snowscript-js",
+	"displayName": "SnowScript JS",
+	"description": "Syntax Highlight for Snowflake stored procedures",
+	"version": "1.0.8",
+	"engines": {
+		"vscode": "^1.48.0"
+	},
+	"repository": "https://github.com/orellabac/snowflake-sp-syntax-coloring",
+	"publisher": "orellabacCR",
+	"icon": "images/icon.png",
+	"author": "Mauricio Rojas",
+	"license": "Mauricio Rojas",
+	"main": "./out/extension.js",
+	"keywords": [
+		"snowflake",
+		"stored procedures",
+		"syntax"
+	],
+	"categories": [
+		"Programming Languages"
+	],
+	"activationEvents": [
+		"onCommand:extension.selectSingleQuote",
+		"onCommand:extension.selectDoubleQuote",
+		"onCommand:extension.selectEitherQuote",
+		"onCommand:extension.switchQuotes",
+		"onCommand:extension.selectParenthesis",
+		"onCommand:extension.selectBackTick",
+		"onCommand:extension.selectSquareBrackets",
+		"onCommand:extension.selectCurlyBrackets",
+		"onCommand:extension.selectParenthesisOuter",
+		"onCommand:extension.selectSquareBracketsOuter",
+		"onCommand:extension.selectCurlyBracketsOuter",
+		"onCommand:extension.selectAngleBrackets",
+		"onCommand:extension.selectInTag"
+	],
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "Quick Select configuration",
+			"properties": {
+				"quick-select.includeBackticks": {
+					"type": "boolean",
+					"default": true,
+					"description": "Include backticks when selecting or switching any quotes"
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "extension.selectSingleQuote",
+				"title": "Quick Select: Select inside single quote"
+			},
+			{
+				"command": "extension.selectDoubleQuote",
+				"title": "Quick Select: Select inside double quote"
+			},
+			{
+				"command": "extension.selectEitherQuote",
+				"title": "Quick Select: Select inside either quote"
+			},
+			{
+				"command": "extension.switchQuotes",
+				"title": "Quick Select: Switch quotes"
+			},
+			{
+				"command": "extension.selectParenthesis",
+				"title": "Quick Select: Select inside parenthesis"
+			},
+			{
+				"command": "extension.selectBackTick",
+				"title": "Quick Select: Select inside back ticks"
+			},
+			{
+				"command": "extension.selectSquareBrackets",
+				"title": "Quick Select: Select inside square brackets"
+			},
+			{
+				"command": "extension.selectCurlyBrackets",
+				"title": "Quick Select: Select inside curly brackets"
+			},
+			{
+				"command": "extension.selectParenthesisOuter",
+				"title": "Quick Select: Select outside parenthesis"
+			},
+			{
+				"command": "extension.selectSquareBracketsOuter",
+				"title": "Quick Select: Select outside square brackets"
+			},
+			{
+				"command": "extension.selectCurlyBracketsOuter",
+				"title": "Quick Select: Select outside curly brackets"
+			},
+			{
+				"command": "extension.selectAngleBrackets",
+				"title": "Quick Select: Select inside angled brackets"
+			},
+			{
+				"command": "extension.selectInTag",
+				"title": "Quick Select: Select inside tag"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"command": "extension.selectBackTick"
+				}
+			]
+		},
+		"languages": [
+			{
+				"id": "snowscriptjs",
+				"aliases": [
+					"SnowScriptJS",
+					"snowscriptjs"
+				],
+				"extensions": [
+					".sql"
+				],
+				"configuration": "./language-configuration.json",
+				"embeddedLanguages": {
+					"code.block.snowscriptjs": "source.js"
+				}
+			},
+			{
+				"id": "snowscript",
+				"aliases": [
+					"SnowScript"
+				],
+				"extensions": [
+					".sql"
+				],
+				"configuration": "./language-configuration.json"
+			},
+			{
+				"id": "snowscriptjava",
+				"aliases": [
+					"SnowScriptJava"
+				],
+				"extensions": [
+					".sql"
+				],
+				"configuration": "./language-configuration.json"
+			},
+			{
+				"id": "snowscriptscala",
+				"aliases": [
+					"SnowScriptscala"
+				],
+				"extensions": [
+					".sql"
+				],
+				"configuration": "./language-configuration.json"
+			},
+			{
+				"id": "snowscriptpython",
+				"aliases": [
+					"SnowScriptPython"
+				],
+				"extensions": [
+					".sql"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "snowscript",
+				"scopeName": "source.snowscript",
+				"path": "./syntaxes/snowscript.tmLanguage.json"
+			},            
+			{
+				"language": "snowscriptpython",
+				"scopeName": "source.snowscriptpython",
+				"path": "./syntaxes/snowscriptpython.tmLanguage.json"
+			},
+			{
+				"language": "snowscriptscala",
+				"scopeName": "source.snowscriptscala",
+				"path": "./syntaxes/snowscriptscala.tmLanguage.json"
+			},
+			{
+				"language": "snowscriptjava",
+				"scopeName": "source.snowscriptjava",
+				"path": "./syntaxes/snowscriptjava.tmLanguage.json"
+			},
+			{
+				"language": "snowscriptjs",
+				"scopeName": "source.snowscriptjs",
+				"path": "./syntaxes/snowscriptjs.tmLanguage.json"
+			},
+			{
+				"path": "./syntaxes/highlight-sql-string-python.json",
+				"scopeName": "snow-sql-py.injection",
+				"injectTo": [
+					"source.python"
+				],
+				"embeddedLanguages": {
+					"meta.embedded.sql": "sql"
+				}
+			},
+			{
+				"path": "./syntaxes/highlight-sql-string.json",
+				"scopeName": "snow-sql.injection",
+				"injectTo": [
+					"source.snowscript"
+				],
+				"embeddedLanguages": {
+					"meta.embedded.sql": "sql"
+				}
+			}
+		],
+		"breakpoints": [
+			{
+				"language": "snowscriptjs"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "tsc -p ./",
+		"compile": "tsc -watch -p ./"
+	},
+	"devDependencies": {
+		"typescript": "^4.1.2",
+		"@types/vscode": "^1.46.0",
+		"@types/node": "^12.11.7"
+	},
+	"dependencies": {}
 }

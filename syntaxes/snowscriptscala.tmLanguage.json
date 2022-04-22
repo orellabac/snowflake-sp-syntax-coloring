@@ -1,6 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "snowscriptjava",
+	"name": "SnowScriptScala",
 	"patterns": [
 		{
 			"include":"#numbers"
@@ -25,17 +25,17 @@
 			"include": "source.sql"
 		},
 		{
-			"name":"code.block.snowscriptjava",
-			"comment":"Matches a JS code block",
+			"name":"code.block.snowscriptscala",
+			"comment":"Matches a Java code block",
 			"begin" : "(?x) \\$\\$",
 			"end": "(?x) \\$\\$",
 			"patterns": [
-				{ "include" : "source.js"}
+				{ "include" : "source.scala"}
 			]
 		},
 		
 		{
-			"name":"variable.parameter.snowscriptjava",
+			"name":"variable.parameter.snowscriptscala",
 
 			"match": "(?i)\\b[-a-z0-9_]+\\b"
 		
@@ -46,7 +46,7 @@
 	   "numbers": {
 		   "patterns":[
 			   {
-				"name":"constant.numeric.snowscriptjava",
+				"name":"constant.numeric.snowscriptscala",
 				"match":"\\b\\d+(\\.\\d+)?\\b"
 			   }
 		   ]
@@ -56,18 +56,14 @@
 				{
 				"begin":"/\\*",
 				"end":"\\*/",
-				"name":"comment.block.snowscriptjava"
-				},
-				{
-					"match":"--.*$",
-					"name":"comment.line.double-dash.snowscriptjava"
+				"name":"comment.block.snowscriptscala"
 				}
 			]
 		},
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.snowscript",
-				"match": "\\b(CREATE|REPLACE|PROCEDURE|CALLER|LANGUAGE|JAVASCRIPT|EXECUTE|RETURN|RETURNS)\\b"
+				"match": "\\b(CREATE|REPLACE|PROCEDURE|CALLER|LANGUAGE|SCALA|EXECUTE|RETURN|RETURNS)\\b"
 			}]
 		},
 		"databasetypes": {
@@ -98,5 +94,5 @@
 			]
 		}
 	},
-	"scopeName": "source.snowscriptjs"
+	"scopeName": "source.snowscriptscala"
 }
