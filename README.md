@@ -46,7 +46,7 @@ Also integrating commands for quick selection.
 ### 1.0.7
 Republish
 
-### 1.0.8
+### 1.0.9
 Adding support for java / scala / python and fix issues with snowscript
 
 # Examples
